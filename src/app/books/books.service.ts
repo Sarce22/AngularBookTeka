@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class BooksService {
 
   urlBase = environment.API_URL
-  url = Contants.VALIDATE_WITH_LOGIN
 
   constructor(private http: HttpClient) {
 

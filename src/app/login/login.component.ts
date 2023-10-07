@@ -43,6 +43,7 @@ export class LoginComponent {
         console.log(res);
         this.router.navigateByUrl('dashboard') 
         Swal.fire({
+          icon:'success',
           title: '¡Bienvenido a BookTeka!',
           text: 'Gracias por visitar nuestro sitio web.',
           width: 600,
@@ -52,7 +53,7 @@ export class LoginComponent {
           background: '#fff url(/images/trees.png)',
           backdrop: `
             rgba(0,0,123,0.4)
-            url("https://media.tenor.com/xzjlrhYq_lQAAAAj/cat-nyan-cat.gif")
+            url("https://raw.githubusercontent.com/gist/s-shivangi/7b54ec766cf446cafeb83882b590174d/raw/8957088c2e31dba6d72ce86c615cb3c7bb7f0b0c/nyan-cat.gif")
             left top
             no-repeat
 `

@@ -1,45 +1,49 @@
 <div class="container">
     <br />
     <h1>Bienvenido a Bookteka</h1>
-    <div class="buttons"></div>
+    
+    <div class="container-fluid">
 
-    <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
-        <label for="username">
-            <label>Correo</label>
-            <input id="username" name="username" placeholder="Ingresa tu correo" formControlName="username"
-                class="form-control" />
-            <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']"
-                class="alert alert-danger mt-2" role="alert">
-                El username es requerido
+        <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+            <label for="username">
+                <label>Correo</label>
+                <input id="username" name="username" placeholder="Ingresa tu correo" formControlName="username"
+                    class="form-control" />
+                <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']"
+                    class="alert alert-danger mt-2" role="alert">
+                    El username es requerido
+                </div>
+            </label>
+            <label for="password">
+                <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="6+ caracteres" formControlName="password"
+                    class="form-control" />
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+                    class="alert alert-danger mt-2" role="alert">
+                    La contraseña es requerida
+                </div>
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']"
+                    class="alert alert-danger mt-2" role="alert">
+                    Minimo 6 caracteres para la contraseña
+                </div>
+            </label>
+    
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="submit-btn">Iniciar Sesión</button>
+    
+                </div>
+                <div class="col">
+                    <button routerLink="/registro" class="submit-btn">Registrarse</button>
+    
+                </div>
             </div>
-        </label>
-        <label for="password">
-            <label>Password</label>
-            <input type="password" id="password" name="password" placeholder="6+ caracteres" formControlName="password"
-                class="form-control" />
-            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
-                class="alert alert-danger mt-2" role="alert">
-                La contraseña es requerida
-            </div>
-            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']"
-                class="alert alert-danger mt-2" role="alert">
-                Minimo 6 caracteres para la contraseña
-            </div>
-        </label>
+            
+            
+           
+        </form>
 
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="submit-btn">Iniciar Sesión</button>
-
-            </div>
-            <div class="col">
-                <button routerLink="/registro" class="submit-btn">Registrarse</button>
-
-            </div>
-        </div>
-        
-        
-       
-    </form>
+    </div>
+    
     <br /><br /><br /><br /><br /><br />
 </div>

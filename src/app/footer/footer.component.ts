@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
-  urlInstagram = ''
-  urlFacebook = ''
+  urlInstagram = 'https://cdn-icons-png.flaticon.com/128/2111/2111463.png'
+  urlFacebook = 'https://cdn-icons-png.flaticon.com/128/2504/2504903.png'
+
+  
 }

@@ -34,16 +34,27 @@ export class RegistrarseComponent {
     if(this.registrarseFormulario.valid){
       
       Swal.fire({
-        icon:'success',
-        title:'Tu cuenta ha sido creada con exito',
-        text:'Disfruta del mejor contenido'
+        icon: 'success',
+        title: '¡Bienvenido a BookTeka!',
+        text: 'Gracias por visitar nuestro sitio web.',
+        width: 600,
+        confirmButtonText: 'Continuar',
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://raw.githubusercontent.com/gist/s-shivangi/7b54ec766cf446cafeb83882b590174d/raw/8957088c2e31dba6d72ce86c615cb3c7bb7f0b0c/nyan-cat.gif")
+          left top
+          no-repeat
+`
       })
 
     }else{
       Swal.fire({
         icon: 'error',
-        title: 'Oops...Verifica tu informacion',
-        text: 'Something went wrong!',
+        title: 'Verifica tu informacion',
+        text: 'Algo ha salido mal :(',
         footer: '<a href="">Ayuda?</a>'
       })
     }
