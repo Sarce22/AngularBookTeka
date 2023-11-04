@@ -9,15 +9,35 @@ import { SwalUtils } from 'src/app/utils/swal-utils';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent{
+export class InicioComponent implements OnInit{
 
   imagen1 = 'https://merakilibris.files.wordpress.com/2017/11/add-heding-4.png?w=1200'
   imagen2 = 'https://funhousetoys.com.au/cdn/shop/collections/HarryPotter.png?v=1613178676' 
   imagen3 = 'https://www.todofondos.net/wp-content/uploads/Fondo-de-pantalla-insurgente-1920x1080-Tris-y-cuatro-papel-tapiz-divergente-1024x576.jpg'
 
-  aGoodGirl = 'https://books.google.com/books/publisher/content/images/frontcover/qsudDwAAQBAJ?fife=w480-h690'
-  cronicasMuerteAnunciada = 'https://books.google.com/books/publisher/content/images/frontcover/KbsZEAAAQBAJ?fife=w480-h690'
-  akelarre = 'https://books.google.com/books/publisher/content/images/frontcover/jOmRDwAAQBAJ?fife=w480-h690'
-  relatos = 'https://books.google.com/books/publisher/content/images/frontcover/JUikCwAAQBAJ?fife=w480-h690'
-  todoLoQueSomosJuntos = 'https://books.google.com/books/publisher/content/images/frontcover/njmNDwAAQBAJ?fife=w480-h690'
+  books!: Book[]
+
+  constructor(private booksService: BooksService){}
+
+  ngOnInit(): void {
+    this.getNowPlaying()
+  }
+
+  getNowPlaying() {
+    this.booksService.getNowPlaying().subscribe((res) => {
+      console.log("sisi ",res);
+      console.log('array',this.books);
+      
+      if (res) {
+        this.books = res.results
+        console.log(this.books);
+
+      } else {
+        SwalUtils.customMessageError("Error", "No se encontratron libros")
+      }
+    }, (error) => {
+      console.log(error);
+      SwalUtils.customMessageError("Error", "Error al consultar los datos")
+    })
+  }
 }

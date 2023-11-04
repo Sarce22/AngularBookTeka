@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Contants } from '../constants/constants';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +15,20 @@ export class BooksService {
 
   }
 
-  getNowPlaying() {
+  getNowPlaying(): Observable<any> {
     const options = {
-      headers: {
-        'content-type': 'application/json',
-        //Authorization: 'Bearer ' + environment.ACCESS_TOKEN
-      }
-    }
-    return this.http.get<any>(this.urlBase + "?language=es", options)
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.get<any>(this.urlBase + Contants.GET_ALL_BOOKS, options)
+      .pipe(
+        catchError(error => {
+          console.error('Error en la solicitud:', error);
+          return throwError(error);
+        })
+      );
   }
+  
 }
 
