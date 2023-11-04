@@ -25,11 +25,10 @@ export class InicioComponent implements OnInit{
 
   getNowPlaying() {
     this.booksService.getNowPlaying().subscribe((res) => {
-      console.log("sisi ",res);
-      console.log('array',this.books);
+      console.log(res);
       
       if (res) {
-        this.books = res.results
+        this.books = res
         console.log(this.books);
 
       } else {
