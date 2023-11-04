@@ -9,6 +9,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { RegistrarseModule } from './registrarse/registrarse.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent

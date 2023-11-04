@@ -8,91 +8,69 @@
           <br />
         </div>
         <div class="col">
-          <label for="">Nombre</label>
-          <input
-            type="text"
-            class=""
-            id="nombre"
-            placeholder="Ingrese su nombre"
-            formControlName="nombre"
-          />
-          <div
-            *ngIf="registrarseFormulario!.get('nombre')?.touched
-                                          && registrarseFormulario!.get('nombre')?.errors?.['required']"
-            class="alert alert-danger mt-1"
-            role="alert"
-          >
-            Ingresa tu nombre
+          <label for="">name</label>
+          <input type="text" class="" id="name" placeholder="Ingrese su name" formControlName="name" />
+          <div *ngIf="registrarseFormulario!.get('name')?.touched
+                                          && registrarseFormulario!.get('name')?.errors?.['required']"
+            class="alert alert-danger mt-1" role="alert">
+            Ingresa tu name
           </div>
         </div>
         <br />
         <div class="col">
-          <label for="">Apellido</label>
-          <input
-            type="text"
-            class=""
-            id="apellido"
-            placeholder="Ingrese su apellido"
-            formControlName="apellido"
-          />
-          <div
-            *ngIf="registrarseFormulario!.get('apellido')?.touched
-                                          && registrarseFormulario!.get('apellido')?.errors?.['required']"
-            class="alert alert-danger mt-1"
-            role="alert"
-          >
-            Ingresa tu apellido
+          <label for="">lastname</label>
+          <input type="text" class="" id="lastname" placeholder="Ingrese su lastname" formControlName="lastname" />
+          <div *ngIf="registrarseFormulario!.get('lastname')?.touched
+                                          && registrarseFormulario!.get('lastname')?.errors?.['required']"
+            class="alert alert-danger mt-1" role="alert">
+            Ingresa tu lastname
+          </div>
+        </div>
+          <div class="col">
+          <label for="">id</label>
+          <input type="number" class="" id="id" placeholder="Ingrese su id" formControlName="id" />
+          <div *ngIf="registrarseFormulario!.get('id')?.touched
+                                          && registrarseFormulario!.get('id')?.errors?.['required']"
+            class="alert alert-danger mt-1" role="alert">
+            Ingresa tu id
           </div>
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputAddress">Email</label>
-        <input
-          type="email"
-          class=""
-          id="email"
-          placeholder="Ingrese su email"
-          formControlName="email"
-        />
-        <div
-          *ngIf="registrarseFormulario!.get('email')?.touched
+        <input type="email" class="" id="email" placeholder="Ingrese su email" formControlName="email" />
+        <div *ngIf="registrarseFormulario!.get('email')?.touched
                                           && registrarseFormulario!.get('email')?.errors?.['required']"
-          class="alert alert-danger mt-1"
-          role="alert"
-        >
+          class="alert alert-danger mt-1" role="alert">
           Ingresa tu email
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputAddress">Contraseña</label>
-        <input
-          type="password"
-          class=""
-          id="password"
-          placeholder="Ingrese una contraseña"
-          formControlName="password"
-        />
-        <div
-          *ngIf="registrarseFormulario!.get('password')?.touched
+        <input type="password" class="" id="password" placeholder="Ingrese una contraseña" formControlName="password" />
+        <div *ngIf="registrarseFormulario!.get('password')?.touched
                                           && registrarseFormulario!.get('password')?.errors?.['required']"
-          class="alert alert-danger mt-1"
-          role="alert"
-        >
+          class="alert alert-danger mt-1" role="alert">
           Ingresa tu contraseña
         </div>
         <div
           *ngIf="registrarseFormulario.get('password')?.touched
                                                                   && registrarseFormulario.get('password')?.errors?.['minlength']"
-          class="alert alert-danger mt-2"
-          role="alert"
-        >
+          class="alert alert-danger mt-2" role="alert">
           Minimo 6 caracteres para el password
         </div>
       </div>
-      <br />
-
+      
+      <div class="col" style="display: none;">
+        <label for="role">role</label>
+        <input type="text" class="" id="role" placeholder="Ingrese su id" formControlName="role" />
+        <div *ngIf="registrarseFormulario!.get('role')?.touched && registrarseFormulario!.get('role')?.errors?.['required']" class="alert alert-danger mt-1" role="alert">
+          Ingresa tu role
+        </div>
+      </div>
+      
       <br />
       <button type="submit" class="submit-btn">Registrarse</button>
     </label>
