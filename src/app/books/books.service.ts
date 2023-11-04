@@ -18,10 +18,10 @@ export class BooksService {
     const options = {
       headers: {
         'content-type': 'application/json',
-        Authorization: 'Bearer ' + environment.ACCESS_TOKEN
+        //Authorization: 'Bearer ' + environment.ACCESS_TOKEN
       }
     }
-    return this.http.get<any>(this.urlBase + Contants.POPULAR + "?language=es", options)
+    return this.http.get<any>(this.urlBase + "?language=es", options)
   }
 }
 

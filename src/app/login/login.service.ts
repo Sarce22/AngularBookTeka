@@ -10,16 +10,18 @@ import { Login } from './login';
 export class LoginService {
 
   urlBase = environment.API_URL
-  url= Contants.VALIDATE_WITH_LOGIN
+  url = Contants.LOGIN
+  urlCheckRol = Contants.CHECK_USER_ROL
 
   constructor(private http: HttpClient) {
-    
+
   }
+
   login(login:Login) {
     const options = {
       headers: {
         'content-type': 'application/json',
-        Authorization: 'Bearer '+ environment.ACCESS_TOKEN
+        //Authorization: 'Bearer '+ environment.ACCESS_TOKEN
       }
     }
     let json = JSON.stringify(login)
