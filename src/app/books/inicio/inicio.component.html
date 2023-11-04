@@ -36,7 +36,6 @@
   <h1>Mas libros...</h1><br>
   <!--Row 1-->
   <div class="row">
-    <h4>holi</h4>
     <div class="col-lg-2 col-sm-6 col-md-6 d-flex align-items-stretch justify-content-center"
       *ngFor="let book of books">
       <div class="card card-1 shadow">
@@ -44,7 +43,7 @@
           <img src="{{book.urlImage}}" class="custom-img" alt="{{book.name}}">
           <div class="card-body p-1">
             <h5 class="card-title">{{book.name}}</h5>
-            <p class="card-text ">{{book.price}}</p>
+            <p class="card-text text-danger">${{book.price}}</p>
           </div>
         </a>
       </div>

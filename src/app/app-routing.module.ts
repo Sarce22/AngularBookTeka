@@ -27,6 +27,9 @@ const routes: Routes = [
       },
       {
         path: 'books', loadChildren: () => import('./books/books.module').then(m=>m.BooksModule)
+      },
+      {
+        path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
       }
     ]
   }
