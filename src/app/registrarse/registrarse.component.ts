@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from './usuario';
 import Swal from 'sweetalert2';
+import { RegistrarseService } from './registrarse.service';
+
 
 @Component({
   selector: 'app-registrarse',
@@ -13,9 +15,9 @@ export class RegistrarseComponent {
   registrarseFormulario!:FormGroup
   usuario: Usuario = new Usuario()
 
-  constructor(private fb: FormBuilder){
-    
+  constructor(private fb: FormBuilder, private registrarseService: RegistrarseService) {
   }
+  
 
   ngOnInit(){
     this.registrarseFormulario = this.iniciarFormulario()
@@ -23,10 +25,12 @@ export class RegistrarseComponent {
 
   iniciarFormulario():FormGroup{
     return this.fb.group({
-      nombre:['',[Validators.required]],
-      apellido:['',[Validators.required]],
+      name:['',[Validators.required]],
+      lastname:['',[Validators.required]],
+      id:['',[Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required,Validators.minLength(5)]]
+      password: ['', [Validators.required,Validators.minLength(5)]],
+      role:['user',[Validators.required]],
     })
   }
 
@@ -49,7 +53,6 @@ export class RegistrarseComponent {
           no-repeat
 `
       })
-
     }else{
       Swal.fire({
         icon: 'error',
