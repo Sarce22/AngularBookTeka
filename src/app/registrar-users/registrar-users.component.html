@@ -1,0 +1,78 @@
+<h1>Registra nuevos usuarios en BookTeka</h1>
+
+<div class="container">
+    <form [formGroup]="registrarseFormulario" (ngSubmit)="onRegister()">
+      <div class="container"><br /></div>
+      <div class="row">
+        <div class="col-12">
+          
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingrese su name" formControlName="name" />
+          <div *ngIf="registrarseFormulario.get('name')?.touched && registrarseFormulario.get('name')?.errors?.['required']"
+            class="alert alert-danger mt-1" role="alert">
+            Ingresa tu name
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="lastname">Lastname</label>
+          <input type="text" class="form-control" id="lastname" placeholder="Ingrese su lastname" formControlName="lastname" />
+          <div *ngIf="registrarseFormulario!.get('lastname')?.touched
+                                          && registrarseFormulario!.get('lastname')?.errors?.['required']"
+            class="alert alert-danger mt-1" role="alert">
+            Ingresa tu lastname
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="id">ID</label>
+          <input type="number" class="form-control" id="id" placeholder="Ingrese su id" formControlName="id" />
+          <div *ngIf="registrarseFormulario!.get('id')?.touched
+                                          && registrarseFormulario!.get('id')?.errors?.['required']"
+            class="alert alert-danger mt-1" role="alert">
+            Ingresa tu id
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email" />
+        <div *ngIf="registrarseFormulario!.get('email')?.touched
+                                          && registrarseFormulario!.get('email')?.errors?.['required']"
+          class="alert alert-danger mt-1" role="alert">
+          Ingresa tu email
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" id="password" placeholder="Ingrese una contraseña" formControlName="password" />
+        <div *ngIf="registrarseFormulario!.get('password')?.touched
+                                          && registrarseFormulario!.get('password')?.errors?.['required']"
+          class="alert alert-danger mt-1" role="alert">
+          Ingresa tu contraseña
+        </div>
+        <div
+          *ngIf="registrarseFormulario.get('password')?.touched
+                                                              && registrarseFormulario.get('password')?.errors?.['minlength']"
+          class="alert alert-danger mt-2" role="alert">
+          Mínimo 6 caracteres para la contraseña
+        </div>
+      </div>
+  
+      <div class="col" style="display: none">
+        <label for="role">Role</label>
+        <input type="text" class="form-control" id="role" placeholder="Ingrese su role" formControlName="role" value="user" />
+        <div
+          *ngIf="registrarseFormulario!.get('role')?.touched && registrarseFormulario!.get('role')?.errors?.['required']"
+          class="alert alert-danger mt-1" role="alert">
+          Ingresa tu role
+        </div>
+      </div>
+  
+      <br />
+      <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+    </form>
+  </div>
+  
