@@ -1,21 +1,21 @@
 <div class="container">
-  <form (ngSubmit)="onRegister()" [formGroup]="registrarseFormulario">
+  <form [formGroup]="registrarseFormulario" (ngSubmit)="onRegister()">
     <label for="">
       <div class="container"><br /></div>
       <div class="row">
         <div class="">
-          <h1>Registro</h1>
+          <h1>Registrate en BookTeka</h1>
           <br />
         </div>
         <div class="col">
           <label for="">name</label>
           <input type="text" class="" id="name" placeholder="Ingrese su name" formControlName="name" />
-          <div *ngIf="registrarseFormulario!.get('name')?.touched
-                                          && registrarseFormulario!.get('name')?.errors?.['required']"
+          <div
+            *ngIf="registrarseFormulario.get('name')?.touched && registrarseFormulario.get('name')?.errors?.['required']"
             class="alert alert-danger mt-1" role="alert">
             Ingresa tu name
           </div>
-        </div>
+        </div><br>
         <br />
         <div class="col">
           <label for="">lastname</label>
@@ -26,7 +26,7 @@
             Ingresa tu lastname
           </div>
         </div>
-          <div class="col">
+        <div class="col">
           <label for="">id</label>
           <input type="number" class="" id="id" placeholder="Ingrese su id" formControlName="id" />
           <div *ngIf="registrarseFormulario!.get('id')?.touched
@@ -62,15 +62,17 @@
           Minimo 6 caracteres para el password
         </div>
       </div>
-      
-      <div class="col" style="display: none;">
+
+      <div class="col" style="display: none">
         <label for="role">role</label>
-        <input type="text" class="" id="role" placeholder="Ingrese su id" formControlName="role" />
-        <div *ngIf="registrarseFormulario!.get('role')?.touched && registrarseFormulario!.get('role')?.errors?.['required']" class="alert alert-danger mt-1" role="alert">
+        <input type="text" class="" id="role" placeholder="Ingrese su id" formControlName="role" value="user" />
+        <div
+          *ngIf="registrarseFormulario!.get('role')?.touched && registrarseFormulario!.get('role')?.errors?.['required']"
+          class="alert alert-danger mt-1" role="alert">
           Ingresa tu role
         </div>
       </div>
-      
+
       <br />
       <button type="submit" class="submit-btn">Registrarse</button>
     </label>

@@ -32,6 +32,9 @@ const routes: Routes = [
         path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
       }
     ]
+  },
+  {
+    path: 'logout', redirectTo:'/login', pathMatch:'full'
   }
 ];
 
