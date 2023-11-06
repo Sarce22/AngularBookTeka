@@ -11,6 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RegistrarUsersComponent } from './registrar-users/registrar-users.component';
 import { ListadoUsersComponent } from './listado-users/listado-users.component';
 import { RegistrarUsersModule } from './registrar-users/registrar-users.module';
+import { ListadoUsersModule } from './listado-users/listado-users.module';
 
 
 
@@ -28,6 +29,7 @@ import { RegistrarUsersModule } from './registrar-users/registrar-users.module';
     BooksModule,
     DashboardModule,
     RegistrarseModule,
+    ListadoUsersModule
     
   ],
   providers: [],

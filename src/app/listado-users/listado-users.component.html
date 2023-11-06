@@ -1,1 +1,31 @@
-<h1>Ver listado de Usuarios</h1>
+<h1>Ver listado de Usuarios</h1><br>
+
+<div class="container">
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.id }}</td>
+          <td>{{ user.email }}</td>
+            <!--Editar usuario-->
+            <td 
+            ><img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/1177/1177434.png" style='width: 30px' alt=""></td>
+            <!--Eliminar usuario-->
+            <td
+            ><img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/7347/7347206.png" style='width: 30px' alt=""></td>  
+        </tr>
+      </tbody>
+    </table>
+  </div>

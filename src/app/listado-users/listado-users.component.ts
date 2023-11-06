@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './user';
-import { ListadoUsersService } from './listado-users.service';
 import { SwalUtils } from '../utils/swal-utils';
+import { ListadoUsersService } from './listado-users.service';
 
 @Component({
   selector: 'app-listado-users',
@@ -36,4 +36,6 @@ export class ListadoUsersComponent implements OnInit {
       SwalUtils.customMessageError("Error", "Error al consultar los datos")
     })
   }
+
+
 }
