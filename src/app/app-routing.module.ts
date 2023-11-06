@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
+import { AdminComponent } from './admin/admin.component';
+import { RegistrarUsersComponent } from './registrar-users/registrar-users.component';
+import { ListadoUsersComponent } from './listado-users/listado-users.component';
 
 const routes: Routes = [
   {
@@ -30,6 +33,15 @@ const routes: Routes = [
       },
       {
         path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
+      },
+      {
+        path: 'admin', component:AdminComponent
+      },
+      {
+        path: 'registrarUser',component:RegistrarUsersComponent
+      },
+      {
+        path: 'listadoUsers',component:ListadoUsersComponent
       }
     ]
   },
