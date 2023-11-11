@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+         <h1>Registro de libros</h1>
+          <div class="card-body">
+            <form [formGroup]="registrarseFormulario" (ngSubmit)="onRegister()">
+              <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+                <div *ngIf="registrarseFormulario.get('name')?.touched && registrarseFormulario.get('name')?.errors?.['required']"
+                     class="alert alert-danger mt-1" role="alert">
+                  Ingresa tu nombre.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="isbn">ISBN:</label>
+                <input type="text" class="form-control" id="isbn" formControlName="isbn">
+                <div *ngIf="registrarseFormulario.get('isbn')?.touched && registrarseFormulario.get('isbn')?.errors?.['required']"
+                     class="alert alert-danger mt-1" role="alert">
+                  El ISBN es obligatorio.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="price">Precio:</label>
+                <input type="number" class="form-control" id="price" formControlName="price">
+                <div *ngIf="registrarseFormulario.get('price')?.touched && registrarseFormulario.get('price')?.errors?.['required']"
+                     class="alert alert-danger mt-1" role="alert">
+                  El precio es obligatorio.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">Descripción:</label>
+                <textarea class="form-control" id="description" formControlName="description"></textarea>
+                <div *ngIf="registrarseFormulario.get('description')?.touched && registrarseFormulario.get('description')?.errors?.['required']"
+                     class="alert alert-danger mt-1" role="alert">
+                  La descripción es obligatoria.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="urlImage">URL de la Imagen:</label>
+                <input type="text" class="form-control" id="urlImage" formControlName="urlImage">
+                <div *ngIf="registrarseFormulario.get('urlImage')?.touched && registrarseFormulario.get('urlImage')?.errors?.['required']"
+                     class="alert alert-danger mt-1" role="alert">
+                  La URL de la imagen es obligatoria.
+                </div>
+                <div *ngIf="registrarseFormulario.get('urlImage')?.touched && registrarseFormulario.get('urlImage')?.errors?.['minlength']"
+                     class="alert alert-danger mt-1" role="alert">
+                  La URL de la imagen debe tener al menos 5 caracteres.
+                </div>
+              </div><br>
+              <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -6,6 +6,8 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegistrarUsersComponent } from './registrar-users/registrar-users.component';
 import { ListadoUsersComponent } from './listado-users/listado-users.component';
+import { RegistrarBooksComponent } from './registrar-books/registrar-books.component';
+import { ListadoBooksComponent } from './listado-books/listado-books.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,12 @@ const routes: Routes = [
       },
       {
         path: 'listadoUsers',component:ListadoUsersComponent
+      },
+      {
+        path: 'registrarBooks',component:RegistrarBooksComponent
+      },
+      {
+        path:'listadoBooks', component:ListadoBooksComponent
       }
     ]
   },

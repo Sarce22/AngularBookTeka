@@ -12,6 +12,9 @@ import { RegistrarUsersComponent } from './registrar-users/registrar-users.compo
 import { ListadoUsersComponent } from './listado-users/listado-users.component';
 import { RegistrarUsersModule } from './registrar-users/registrar-users.module';
 import { ListadoUsersModule } from './listado-users/listado-users.module';
+import { RegistrarBooksComponent } from './registrar-books/registrar-books.component';
+import { RegistrarBooksModule } from './registrar-books/registrar-books.module';
+import { ListadoBooksComponent } from './listado-books/listado-books.component';
 
 
 
@@ -19,6 +22,8 @@ import { ListadoUsersModule } from './listado-users/listado-users.module';
   declarations: [
     AppComponent,
     AdminComponent,
+    ListadoBooksComponent,
+    
     
     
   ],
@@ -29,8 +34,8 @@ import { ListadoUsersModule } from './listado-users/listado-users.module';
     BooksModule,
     DashboardModule,
     RegistrarseModule,
-    ListadoUsersModule
-    
+    ListadoUsersModule,
+    RegistrarBooksModule
   ],
   providers: [],
   bootstrap: [AppComponent]
