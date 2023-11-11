@@ -30,4 +30,23 @@ getNowUsers(): Observable<any> {
       })
     );
 }
+
+deleteUser(userId: number): Observable<any> {
+  const options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+  const url = `${this.urlBase}${Contants.DELETE_USER.replace(':id', userId.toString())}`;
+  return this.http.delete<any>(url, options)
+    .pipe(
+      catchError(error => {
+        console.error('Error al eliminar el usuario:', error);
+        return throwError(error);
+      })
+    );
+}
+
+
+
 }
