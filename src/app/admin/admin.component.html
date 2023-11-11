@@ -1,10 +1,27 @@
-<h1>Bienvenido administrador</h1>
-
-<p>Como administrador podrás gestionar la información de los usuarios</p>
-
-<button routerLink="/dashboard/registrarUser" ariaCurrentWhenActive="page" class="btn btn-secondary">Registrar Usuarios</button> <br><br><br>
-
-<button routerLink="/dashboard/listadoUsers" ariaCurrentWhenActive="page" class="btn btn-secondary">Ver listado de usuarios</button>
-
-
-
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-4">Bienvenido Administrador</h1>
+        <p class="lead">Como administrador, podrás gestionar la información de los usuarios.</p>
+  
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <button routerLink="/dashboard/registrarUser" aria-current="page" class="btn btn-success btn-block">Registrar Usuarios</button>
+          </div>
+          <div class="col-md-6">
+            <button routerLink="/dashboard/listadoUsers" aria-current="page" class="btn btn-warning btn-block">Ver Listado de Usuarios</button>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6">
+            <button routerLink="/dashboard/registrarBooks" aria-current="page" class="btn btn-success btn-block">Registrar Libros</button>
+          </div>
+          <div class="col-md-6">
+            <button routerLink="/dashboard/listadoBooks" aria-current="page" class="btn  btn-warning btn-block">Ver Listado de Libros</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
