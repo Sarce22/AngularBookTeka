@@ -3,6 +3,7 @@ import { User } from './user';
 import { SwalUtils } from '../utils/swal-utils';
 import { ListadoUsersService } from './listado-users.service';
 
+
 @Component({
   selector: 'app-listado-users',
   templateUrl: './listado-users.component.html',

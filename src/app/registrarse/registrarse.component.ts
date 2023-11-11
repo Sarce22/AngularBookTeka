@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { RegistrarseService } from './registrarse.service';
+
 import { User } from './user';
+import { RegistrarseService } from './registrarse.service';
 
 
 @Component({
