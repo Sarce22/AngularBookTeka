@@ -3,4 +3,5 @@ export class Contants {
     static CHECK_USER_ROL = "/checkUserRole"
     static GET_ALL_BOOKS = "/books" 
     static SEARCH_MOVIE = "/search/name" 
+    static GET_BOOK = "/findBook/:isbn"
   }

@@ -3,22 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
+import { ViewBookComponent } from './books/view-book/view-book.component';
 
 const routes: Routes = [
   {
     path: '', redirectTo: '/login', pathMatch: 'full'
   },
-
   {
-    path:'registro', component:RegistrarseComponent
+    path: 'registro', component: RegistrarseComponent
   },
-
   {
-    path:'login', component:LoginComponent
+    path: 'login', component: LoginComponent
   },
-
+  { path: 'dashboard/search/searching/books/book/:isbn', redirectTo: '/dashboard/books/book/:isbn', pathMatch: 'full' },
   
-
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
@@ -26,14 +24,16 @@ const routes: Routes = [
         path: '', redirectTo: '/dashboard/books', pathMatch: 'full'
       },
       {
-        path: 'books', loadChildren: () => import('./books/books.module').then(m=>m.BooksModule)
+        path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule)
       },
       {
         path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
-      }
+      },
+      { path: 'dashboard/books/book/:isbn', component: ViewBookComponent }
     ]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
