@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Swal from 'sweetalert2';
-import { RegistrarseService } from './registrarse.service';
+import { RegistrarUsersService } from './registrar-users.service';
 import { User } from './user';
-
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-registrarse',
-  templateUrl: './registrarse.component.html',
-  styleUrls: ['./registrarse.component.css']
+  selector: 'app-registrar-users',
+  templateUrl: './registrar-users.component.html',
+  styleUrls: ['./registrar-users.component.css']
 })
-export class RegistrarseComponent {
+export class RegistrarUsersComponent {
 
   registrarseFormulario!:FormGroup
  
 
   constructor(private fb: FormBuilder, 
-    private registrarseService: RegistrarseService) {
+    private registrarUserService: RegistrarUsersService) {
   }
   
 
@@ -41,7 +40,7 @@ export class RegistrarseComponent {
     console.log('Datos del formulario:', this.registrarseFormulario.value);
     if (this.registrarseFormulario.valid) {
       this.nuevoUser = this.registrarseFormulario.value; // Asigna los valores del formulario al objeto
-      this.registrarseService.add(this.nuevoUser).subscribe(
+      this.registrarUserService.add(this.nuevoUser).subscribe(
         (response) => {
           console.log('Usuario guardado con éxito:', response);
           this.nuevoUser = new User(); 
@@ -70,6 +69,5 @@ export class RegistrarseComponent {
       });
     }
   }
-  
 
 }

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { ViewBookComponent } from './books/view-book/view-book.component';
 
 const routes: Routes = [
   {
@@ -28,9 +27,11 @@ const routes: Routes = [
       },
       {
         path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
-      },
-      { path: 'dashboard/books/book/:isbn', component: ViewBookComponent }
+      }
     ]
+  },
+  {
+    path: 'logout', redirectTo:'/login', pathMatch:'full'
   }
 ];
 

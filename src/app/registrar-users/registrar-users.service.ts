@@ -1,13 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Contants } from '../constants/constants';
 import { environment } from 'src/environments/environment.development';
+import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegistrarseService {
+export class RegistrarUsersService {
 
   url_base = environment.API_URL
 
@@ -22,5 +22,4 @@ export class RegistrarseService {
     let json = JSON.stringify(user);
     return this.http.post<any>(this.url_base + Contants.INSERT_USER, json, options);
   }
-
 }
