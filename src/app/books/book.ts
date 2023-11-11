@@ -4,4 +4,5 @@ export class Book {
     price: number = 0
     description: string = ""
     urlImage: string = ""
+    category: string = ""
 }
