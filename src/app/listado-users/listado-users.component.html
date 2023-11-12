@@ -9,6 +9,7 @@
           <th>Lastname</th>
           <th>ID</th>
           <th>Email</th>
+          <th>Rol</th>
           <th>Editar</th>
           <th>Eliminar</th>
         </tr>
@@ -19,11 +20,12 @@
           <td>{{ user.lastname }}</td>
           <td>{{ user.id }}</td>
           <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
             <!--Editar usuario-->
-            <td 
+            <td (click)="editarUsuario(user)"
             ><img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/1177/1177434.png" style='width: 30px' alt=""></td>
             <!--Eliminar usuario-->
-            <td
+            <td (click)="eliminarUsuario(user)"
             ><img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/7347/7347206.png" style='width: 30px' alt=""></td>  
         </tr>
       </tbody>
