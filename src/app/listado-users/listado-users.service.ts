@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Contants } from '../constants/constants';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,25 @@ deleteUser(userId: number): Observable<any> {
     );
 }
 
+updateUser(userId: number, updatedUserData: Partial<User>): Observable<any> {
+  const url = `${this.urlBase}${Contants.UPDATE_USER.replace(':id', userId.toString())}`;
+  
+  const options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  return this.http.put<any>(url, updatedUserData, options)
+    .pipe(
+      catchError(error => {
+        console.error('Error al editar el usuario:', error);
+        return throwError(error);
+      })
+    );
+}
 
 
 }
+
+

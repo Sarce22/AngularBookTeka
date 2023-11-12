@@ -15,4 +15,5 @@ export class Contants {
     static INSERT_USER = "/insertUser"
     static GET_ALL_USERS = "/users"
     static DELETE_USER = "/deleteUser/:id"
+    static UPDATE_USER = "/editUser/:id"
   }

@@ -46,7 +46,11 @@ export class ListadoUsersComponent implements OnInit {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: 'Cancelar',
+      backdrop: `
+            rgba(0,10,123,0.4)
+           
+`
     }).then((result) => {
       if (result.isConfirmed) {
         this.listadoUserService.deleteUser(user.id).subscribe(
@@ -63,6 +67,72 @@ export class ListadoUsersComponent implements OnInit {
       }
     });
   }
+
+  editarUsuario(user: User) {
+    Swal.fire({
+      title: 'Editar Usuario',
+      html: `
+      <div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre:</label>
+          <input id="name" class="form-control" value="${user.name}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Apellido:</label>
+          <input id="lastname" class="form-control" value="${user.lastname}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="id" class="form-label">ID:</label>
+          <input id="id" class="form-control" value="${user.id}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input id="email" class="form-control" value="${user.email}" required>
+        </div>
+      </div>
+      <!-- ... otros campos del formulario ... -->
+    `,
+      icon: 'info',
+      confirmButtonText: 'Guardar',
+      showCancelButton: true,
+      cancelButtonText: 'Regresar',
+      backdrop: `
+      rgba(0,10,123,0.4)
+     
+`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const name = (<HTMLInputElement>document.getElementById('name')).value;
+        const lastname = (<HTMLInputElement>document.getElementById('lastname')).value;
+        const id = (<HTMLInputElement>document.getElementById('id')).value;
+        const email = (<HTMLInputElement>document.getElementById('email')).value;
+  
+        // Valida campos si es necesario
+  
+        user.name = name;
+        user.lastname = lastname;
+        user.id = Number(id);
+        user.email = email;
+  
+        // Actualiza otros campos del usuario según sea necesario
+  
+        this.listadoUserService.updateUser(user.id, user).subscribe(
+          _ => {
+            Swal.fire('Cambios guardados con éxito', 'Usuario fue editado', 'success');
+          },
+          error => {
+            console.error('Error al actualizar el usuario:', error);
+            Swal.fire('Error', 'Hubo un problema al actualizar el usuario', 'error');
+          }
+        );
+      }
+    });
+  }
+  
+  
 
   
   
