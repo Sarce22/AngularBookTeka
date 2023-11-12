@@ -7,6 +7,8 @@ export class Contants {
     static SEARCH_MOVIE = "/search/name" 
 
     static INSERT_BOOK = "/insertBook"
+    static DELETE_BOOK = "/deleteBook/:isbn"
+    static UPDATE_BOOK = "/editBook/:isbn"
 
     //Users
 
