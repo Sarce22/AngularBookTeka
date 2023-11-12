@@ -5,12 +5,11 @@
 .card {
     background: #fff;
     display: inline-block;
-    margin-bottom: 2rem;
     position: relative;
-    width: 170px;
+    width: 180px;
     padding: 10px;
     transition: all .4s ease-in-out;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .card a{
@@ -28,16 +27,15 @@
     height: calc(150px*1.5);
     width: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 5px; 
-
 
 }
 
 .carousel-item img {
     height: 400px;
     width: 1200px;
-    border-radius: 30px;
+    border-radius: 20px;
   }
   
   

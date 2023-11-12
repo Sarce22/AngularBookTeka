@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
 
+  url = 'https://static.vecteezy.com/system/resources/thumbnails/011/515/023/small_2x/judicial-quill-writing-on-open-book-judgment-certificate-or-police-document-education-book-quill-template-design-free-vector.jpg'
   
   loginForm!: FormGroup
   login: Login = new Login
