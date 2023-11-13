@@ -9,6 +9,9 @@ import { RegistrarUsersComponent } from './registrar-users/registrar-users.compo
 import { ListadoUsersComponent } from './listado-users/listado-users.component';
 import { RegistrarBooksComponent } from './registrar-books/registrar-books.component';
 import { ListadoBooksComponent } from './listado-books/listado-books.component';
+import { authGuard } from './guards/auth.guard';
+import { Utils } from './utils/utils';
+import { RestrictedComponent } from 'src/restricted/restricted.component';
 
 
 const routes: Routes = [
@@ -25,6 +28,7 @@ const routes: Routes = [
   
   {
     path: 'dashboard', component: DashboardComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '', redirectTo: '/dashboard/books', pathMatch: 'full'
@@ -37,22 +41,29 @@ const routes: Routes = [
 
       },
       {
-        path: 'admin', component:AdminComponent
+        path: 'admin', component:AdminComponent,
+        canMatch: [()=> Utils.isRole('admin')]
       },
       {
-        path: 'registrarUser',component:RegistrarUsersComponent
+        path: 'registrarUser',component:RegistrarUsersComponent,
+        canMatch: [()=> Utils.isRole('admin')]
       },
       {
-        path: 'listadoUsers',component:ListadoUsersComponent
+        path: 'listadoUsers',component:ListadoUsersComponent,
+        canMatch: [()=> Utils.isRole('admin')]
       },
       {
-        path: 'registrarBooks',component:RegistrarBooksComponent
+        path: 'registrarBooks',component:RegistrarBooksComponent,
+        canMatch: [()=> Utils.isRole('admin')]
       },
       {
-        path:'listadoBooks', component:ListadoBooksComponent
-
-      }
+        path:'listadoBooks', component:ListadoBooksComponent,
+        canMatch: [()=> Utils.isRole('admin')]
+      },
     ]
+  },
+  {
+    path: 'restricted', component:RestrictedComponent
   },
   {
     path: 'logout', redirectTo:'/login', pathMatch:'full'
