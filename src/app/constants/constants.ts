@@ -2,7 +2,7 @@ export class Contants {
 
   //books
     static LOGIN = "/login"
-    static CHECK_USER_ROL = "/checkUserRole"
+    
     static GET_ALL_BOOKS = "/books" 
     static SEARCH_MOVIE = "/search/name" 
 
@@ -17,4 +17,5 @@ export class Contants {
     static GET_ALL_USERS = "/users"
     static DELETE_USER = "/deleteUser/:id"
     static UPDATE_USER = "/editUser/:id"
+    static CHECK_USER_ROL = "/checkUserRole"
   }
