@@ -31,7 +31,6 @@ import { ListadoBooksComponent } from './listado-books/listado-books.component';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    BooksModule,
     DashboardModule,
     RegistrarseModule,
     ListadoUsersModule,

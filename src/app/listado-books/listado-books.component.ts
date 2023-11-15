@@ -76,30 +76,60 @@ export class ListadoBooksComponent implements OnInit{
     Swal.fire({
       title: 'Editar Book',
       html: `
-      <div>
-        <div class="mb-3">
-          <label for="name" class="form-label">Nombre:</label>
-          <input id="name" class="form-control" value="${book.name}" required>
-        </div>
+      <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="${book.urlImage}" class="custom-img img-fluid" alt="Imagen del libro">
+            </div>
+            <div class="col-md-8">
+              <div class="mb-3">
+                <label for="name" class="form-label" style="font-weight: bold;">Nombre:</label>
+                <input id="name" class="form-control" value="${book.name}" required>
+              </div>
 
-        <div class="mb-3">
-          <label for="isbn" class="form-label">ISBN:</label>
-          <input id="isbn" class="form-control" value="${book.isbn}" required>
-        </div>
+              <div class="mb-3">
+                <label for="isbn" class="form-label" style="font-weight: bold;">ISBN:</label>
+                <input id="isbn" class="form-control" value="${book.isbn}" required>
+              </div>
 
-        <div class="mb-3">
-          <label for="price" class="form-label">Precio:</label>
-          <input id="price" class="form-control" value="${book.price}" required>
-        </div>
+              <div class="mb-3">
+                <label for="price" class="form-label" style="font-weight: bold;">Precio:</label>
+                <input id="price" class="form-control" value="${book.price}" required>
+              </div>
 
-        <div class="mb-3">
-          <label for="description" class="form-label">description:</label>
-          <input id="description" class="form-control" value="${book.description}" required>
+              
+
+              <div class="form-group">
+                <label for="category" style="font-weight: bold;">Categoría:</label>
+                <select class="form-control" id="category" formControlName="category">
+                  <option value="${book.category}">${book.category}</option>
+                  <option value="paranormal">Paranormal</option>
+                  <option value="cienciaficcion">Ciencia Ficción</option>
+                  <option value="poesia">Poesía</option>
+                  <option value="romance">Romance</option>
+                  <option value="accion">Acción</option>
+                </select>
+              </div><br>
+
+              <div class="mb-3">
+                <label for="urlImage" class="form-label" style="font-weight: bold;">URL de la Imagen:</label>
+                <input id="urlImage" class="form-control" value="${book.urlImage}" required>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
-      <!-- ... otros campos del formulario ... -->
+    </div>
+  </div>
+</div>
+
     `,
-      icon: 'info',
+      width: '75%',
       confirmButtonText: 'Guardar',
       showCancelButton: true,
       cancelButtonText: 'Regresar',
@@ -112,15 +142,19 @@ export class ListadoBooksComponent implements OnInit{
         const name = (<HTMLInputElement>document.getElementById('name')).value;
         const isbn = (<HTMLInputElement>document.getElementById('isbn')).value;
         const price = (<HTMLInputElement>document.getElementById('price')).value;
-        const description = (<HTMLInputElement>document.getElementById('description')).value;
+       
+        const category = (<HTMLInputElement>document.getElementById('category')).value;
+        const urlImage = (<HTMLInputElement>document.getElementById('urlImage')).value;
         
   
         // Valida campos si es necesario
   
         book.name = name;
         book.isbn = isbn;
-        book.description = description;
+        
         book.price = parseInt(price);
+        book.urlImage = urlImage;
+        book.category = category;
   
         // Actualiza otros campos del usuario según sea necesario
   

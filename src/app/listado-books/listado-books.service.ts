@@ -40,7 +40,7 @@ deleteBook(isbn: string): Observable<any> {
       'Content-Type': 'application/json'
     })
   };
-  const url = `${this.urlBase}${Contants.DELETE_BOOK.replace(':id', isbn.toString())}`;
+  const url = `${this.urlBase}${Contants.DELETE_BOOK.replace(':isbn', isbn.toString())}`;
   return this.http.delete<any>(url, options)
     .pipe(
       catchError(error => {

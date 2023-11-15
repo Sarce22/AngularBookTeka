@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Category</th>
         <th>ISBN</th>
         <th>Price</th>
         <th>Description</th>
@@ -15,6 +16,7 @@
     <tbody>
       <tr *ngFor="let book of books">
         <td>{{ book.name }}</td>
+        <td>{{ book.category }}</td>
         <td>{{ book.isbn }}</td>
         <td>{{ book.price }}</td>
         <td>{{ book.description }}</td>

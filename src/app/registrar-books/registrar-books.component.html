@@ -13,6 +13,24 @@
                   Ingresa tu nombre.
                 </div>
               </div>
+
+              <div class="form-group">
+                <label for="category">Categoría:</label>
+                <select class="form-control" id="category" formControlName="category">
+                  <option value="paranormal">Paranormal</option>
+                  <option value="cienciaficcion">Ciencia Ficción</option>
+                  <option value="poesia">Poesía</option>
+                  <option value="romance">Romance</option>
+                  <option value="accion">Accion</option>
+                </select>
+                <div *ngIf="registrarseFormulario.get('category')?.touched && registrarseFormulario.get('category')?.errors?.['required']"
+                   class="alert alert-danger mt-1" role="alert">
+                Selecciona una categoría.
+              </div>
+              </div>
+
+
+
               <div class="form-group">
                 <label for="isbn">ISBN:</label>
                 <input type="text" class="form-control" id="isbn" formControlName="isbn">
