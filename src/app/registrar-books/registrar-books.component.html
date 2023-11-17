@@ -7,7 +7,7 @@
             <form [formGroup]="registrarseFormulario" (ngSubmit)="onRegister()">
               <div class="form-group">
                 <label for="name">Nombre:</label>
-                <input type="text" class="form-control" id="name" formControlName="name">
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingresa un nombre de libro">
                 <div *ngIf="registrarseFormulario.get('name')?.touched && registrarseFormulario.get('name')?.errors?.['required']"
                      class="alert alert-danger mt-1" role="alert">
                   Ingresa tu nombre.
@@ -16,7 +16,7 @@
 
               <div class="form-group">
                 <label for="category">Categoría:</label>
-                <select class="form-control" id="category" formControlName="category">
+                <select class="form-control" id="category" formControlName="category" >
                   <option value="paranormal">Paranormal</option>
                   <option value="cienciaficcion">Ciencia Ficción</option>
                   <option value="poesia">Poesía</option>
@@ -33,7 +33,7 @@
 
               <div class="form-group">
                 <label for="isbn">ISBN:</label>
-                <input type="text" class="form-control" id="isbn" formControlName="isbn">
+                <input type="text" class="form-control" id="isbn" formControlName="isbn" placeholder="Ingresa un ISBN">
                 <div *ngIf="registrarseFormulario.get('isbn')?.touched && registrarseFormulario.get('isbn')?.errors?.['required']"
                      class="alert alert-danger mt-1" role="alert">
                   El ISBN es obligatorio.
@@ -41,7 +41,7 @@
               </div>
               <div class="form-group">
                 <label for="price">Precio:</label>
-                <input type="number" class="form-control" id="price" formControlName="price">
+                <input type="number" class="form-control" id="price" formControlName="price" placeholder="Ingresa un precio">
                 <div *ngIf="registrarseFormulario.get('price')?.touched && registrarseFormulario.get('price')?.errors?.['required']"
                      class="alert alert-danger mt-1" role="alert">
                   El precio es obligatorio.
@@ -49,7 +49,7 @@
               </div>
               <div class="form-group">
                 <label for="description">Descripción:</label>
-                <textarea class="form-control" id="description" formControlName="description"></textarea>
+                <textarea class="form-control" id="description" formControlName="description" placeholder="Ingresa una descripción"></textarea>
                 <div *ngIf="registrarseFormulario.get('description')?.touched && registrarseFormulario.get('description')?.errors?.['required']"
                      class="alert alert-danger mt-1" role="alert">
                   La descripción es obligatoria.
@@ -57,7 +57,7 @@
               </div>
               <div class="form-group">
                 <label for="urlImage">URL de la Imagen:</label>
-                <input type="text" class="form-control" id="urlImage" formControlName="urlImage">
+                <input type="text" class="form-control" id="urlImage" formControlName="urlImage" placeholder="Ingresa una URL de la imagen">
                 <div *ngIf="registrarseFormulario.get('urlImage')?.touched && registrarseFormulario.get('urlImage')?.errors?.['required']"
                      class="alert alert-danger mt-1" role="alert">
                   La URL de la imagen es obligatoria.

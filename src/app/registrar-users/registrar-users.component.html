@@ -8,16 +8,16 @@
           
         </div>
         <div class="col-md-4 mb-3">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Ingrese su name" formControlName="name" />
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" formControlName="name" />
           <div *ngIf="registrarseFormulario.get('name')?.touched && registrarseFormulario.get('name')?.errors?.['required']"
             class="alert alert-danger mt-1" role="alert">
-            Ingresa tu name
+            Ingresa tu nombre
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <label for="lastname">Lastname</label>
-          <input type="text" class="form-control" id="lastname" placeholder="Ingrese su lastname" formControlName="lastname" />
+          <label for="lastname">Apellido</label>
+          <input type="text" class="form-control" id="lastname" placeholder="Ingrese tu apellido" formControlName="lastname" />
           <div *ngIf="registrarseFormulario!.get('lastname')?.touched
                                           && registrarseFormulario!.get('lastname')?.errors?.['required']"
             class="alert alert-danger mt-1" role="alert">
