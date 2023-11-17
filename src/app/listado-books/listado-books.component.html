@@ -4,10 +4,11 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Nombre</th>
+        <th>Categoria</th>
         <th>ISBN</th>
-        <th>Price</th>
-        <th>Description</th>
+        <th>Precio</th>
+        <th>Descripcion</th>
         <th>Editar</th>
         <th>Eliminar</th>
       </tr>
@@ -15,6 +16,7 @@
     <tbody>
       <tr *ngFor="let book of books">
         <td>{{ book.name }}</td>
+        <td>{{ book.category }}</td>
         <td>{{ book.isbn }}</td>
         <td>{{ book.price }}</td>
         <td>{{ book.description }}</td>

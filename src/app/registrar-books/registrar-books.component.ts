@@ -31,6 +31,7 @@ export class RegistrarBooksComponent {
       price:['',[Validators.required]],
       description: ['', [Validators.required]],
       urlImage: ['', [Validators.required,Validators.minLength(5)]],
+      category: ['', [Validators.required]]
       
     })
   }

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1 class="d-flex align-items-stretch justify-content-center">Encuentra los mejores libros en BookTeka</h1><br>
+  <h1 class="d-flex align-items-stretch justify-content-center">Bienvenido a BookTeka</h1><br>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -20,6 +20,7 @@
       <div class="carousel-item">
         <img [src]="imagen3" class="d-block w-100" alt="...">
       </div>
+      
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
       data-bs-slide="prev">
@@ -33,15 +34,16 @@
     </button>
           
   </div><br><br>
-  <h1>Mas libros...</h1><br>
+  
+  <h1>Libros Disponibles</h1><br>
   <!--Row 1 comentar-->
   <div class="row">
     <div class="col-lg-2 col-sm-6 col-md-6 d-flex align-items-stretch justify-content-center"
       *ngFor="let book of books">
       <div class="card card-1 shadow">
-        <a routerLink="../books/book/{{book.isbn}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-decoration-none">
+        <a (click)="verLibro(book)" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-decoration-none">
           <img src="{{book.urlImage}}" class="custom-img" alt="{{book.name}}">
-          
+          <p style="color: black; font-weight: bold;">{{book.category}}</p>
         </a>
       </div>
     </div>

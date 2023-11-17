@@ -10,22 +10,22 @@
 
           <div class="center_form">
             <div class="col">
-              <label for="">name</label>
+              <label for="">Nombre</label>
               <input type="text" class="" id="name" placeholder="Ingrese su name" formControlName="name" />
               <div
                 *ngIf="registrarseFormulario.get('name')?.touched && registrarseFormulario.get('name')?.errors?.['required']"
                 class="alert alert-danger mt-1" role="alert">
-                Ingresa tu name
+                Ingresa tu nombre
               </div>
-            </div>
+            </div><br>
 
             <div class="col">
-              <label for="">lastname</label>
-              <input type="text" class="" id="lastname" placeholder="Ingrese su lastname" formControlName="lastname" />
+              <label for="">Apellido</label>
+              <input type="text" class="" id="lastname" placeholder="Ingrese tu apellido" formControlName="lastname" />
               <div *ngIf="registrarseFormulario!.get('lastname')?.touched
                                           && registrarseFormulario!.get('lastname')?.errors?.['required']"
                 class="alert alert-danger mt-1" role="alert">
-                Ingresa tu lastname
+                Ingresa tu apellido
               </div>
             </div>
             <div class="col">
