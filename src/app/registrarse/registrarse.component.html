@@ -21,7 +21,7 @@
 
             <div class="col">
               <label for="">Apellido</label>
-              <input type="text" class="" id="lastname" placeholder="Ingrese tu apellido" formControlName="lastname" />
+              <input type="text" class="form-control" id="lastname" placeholder="Ingrese tu apellido" formControlName="lastname" >
               <div *ngIf="registrarseFormulario!.get('lastname')?.touched
                                           && registrarseFormulario!.get('lastname')?.errors?.['required']"
                 class="alert alert-danger mt-1" role="alert">
@@ -41,7 +41,7 @@
 
             <div class="form-group">
               <label for="inputAddress">Email</label>
-              <input type="email" class="" id="email" placeholder="Ingrese su email" formControlName="email" />
+              <input type="email" class="" id="email" placeholder="Ingrese su email" formControlName="email"  />
               <div *ngIf="registrarseFormulario!.get('email')?.touched
                                           && registrarseFormulario!.get('email')?.errors?.['required']"
                 class="alert alert-danger mt-1" role="alert">

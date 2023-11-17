@@ -12,6 +12,7 @@ import { ListadoBooksComponent } from './listado-books/listado-books.component';
 import { authGuard } from './guards/auth.guard';
 import { Utils } from './utils/utils';
 import { RestrictedComponent } from 'src/restricted/restricted.component';
+import { deactivateGuard } from './auth/deactivate.guard';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     path: '', redirectTo: '/login', pathMatch: 'full'
   },
   {
-    path: 'registro', component: RegistrarseComponent
+    path: 'registro', component: RegistrarseComponent,
+    canDeactivate:[deactivateGuard]
   },
   {
     path: 'login', component: LoginComponent
