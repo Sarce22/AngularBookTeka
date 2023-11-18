@@ -15,28 +15,29 @@ import { ListadoUsersModule } from './listado-users/listado-users.module';
 import { RegistrarBooksComponent } from './registrar-books/registrar-books.component';
 import { RegistrarBooksModule } from './registrar-books/registrar-books.module';
 import { ListadoBooksComponent } from './listado-books/listado-books.component';
+import { RestrictedComponent } from './restricted/restricted.component';
+import { HeaderModule } from "./header/header.module";
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AdminComponent,
-    ListadoBooksComponent,
-    
-    
-    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    LoginModule,
-    DashboardModule,
-    RegistrarseModule,
-    ListadoUsersModule,
-    RegistrarBooksModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AdminComponent,
+        ListadoBooksComponent,
+        RestrictedComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        LoginModule,
+        DashboardModule,
+        RegistrarseModule,
+        ListadoUsersModule,
+        RegistrarBooksModule,
+        HeaderModule
+    ]
 })
 export class AppModule { }

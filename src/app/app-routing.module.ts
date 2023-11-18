@@ -12,7 +12,7 @@ import { authGuard } from './guards/auth.guard';
 import { Utils } from './utils/utils';
 
 import { deactivateGuard } from './auth/deactivate.guard';
-import { RestrictedComponent } from 'src/restricted/restricted.component';
+import { RestrictedComponent } from 'src/app/restricted/restricted.component';
 
 
 const routes: Routes = [
