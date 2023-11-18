@@ -2,3 +2,10 @@ img{
     border-radius: 20px;
 }
 
+.btn {
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: scale(1.1);
+  }

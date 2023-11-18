@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 import { User } from './user';
@@ -15,6 +15,7 @@ export class RegistrarseComponent {
 
   registrarseFormulario!:FormGroup
  
+  emailControl = new FormControl('', Validators.required)
 
   constructor(private fb: FormBuilder, 
     private registrarseService: RegistrarseService) {
@@ -51,6 +52,7 @@ export class RegistrarseComponent {
             title: 'Se registró con éxito',
             text: 'Disfruta del mejor contenido'
           });
+          this.registrarseFormulario.reset();
         },
         (error) => {
           console.error('Error al guardar el usuario:', error);

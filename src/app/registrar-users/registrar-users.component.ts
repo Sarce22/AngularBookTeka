@@ -49,6 +49,7 @@ export class RegistrarUsersComponent {
             title: 'Se registró con éxito',
             text: 'Disfruta del mejor contenido'
           });
+          this.registrarseFormulario.reset();
         },
         (error) => {
           console.error('Error al guardar el usuario:', error);

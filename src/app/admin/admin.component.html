@@ -1,27 +1,41 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<style>
+ 
+</style>
+
+
 <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <h1 class="display-4 mb-4">Bienvenido Administrador</h1>
-        <p class="lead">Como administrador, podrás gestionar la información de los usuarios.</p>
-  
-        <div class="row mb-4">
-          <div class="col-md-6">
-            <button routerLink="/dashboard/registrarUser" aria-current="page" class="btn btn-success btn-block">Registrar Usuarios</button>
-          </div>
-          <div class="col-md-6">
-            <button routerLink="/dashboard/listadoUsers" aria-current="page" class="btn btn-warning btn-block">Ver Listado de Usuarios</button>
-          </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1 class="display-4 mb-4">Bienvenido Administrador</h1>
+      <p class="lead">Como administrador, podrás gestionar la información de los usuarios.</p>
+
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <button routerLink="/dashboard/registrarUser" aria-current="page" class="btn btn-success btn-block">
+            <i class="fas fa-user-plus"></i> Registrar Usuarios
+          </button>
         </div>
-  
-        <div class="row">
-          <div class="col-md-6">
-            <button routerLink="/dashboard/registrarBooks" aria-current="page" class="btn btn-success btn-block">Registrar Libros</button>
-          </div>
-          <div class="col-md-6">
-            <button routerLink="/dashboard/listadoBooks" aria-current="page" class="btn  btn-warning btn-block">Ver Listado de Libros</button>
-          </div>
+        <div class="col-md-6">
+          <button routerLink="/dashboard/listadoUsers" aria-current="page" class="btn btn-warning btn-block">
+            <i class="fas fa-list"></i> Ver Listado de Usuarios
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <button routerLink="/dashboard/registrarBooks" aria-current="page" class="btn btn-success btn-block">
+            <i class="fas fa-book"></i> Registrar Libros
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button routerLink="/dashboard/listadoBooks" aria-current="page" class="btn  btn-warning btn-block">
+            <i class="fas fa-book-open"></i> Ver Listado de Libros
+          </button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
