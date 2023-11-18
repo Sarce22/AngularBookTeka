@@ -5,6 +5,7 @@ export class Contants {
     
     static GET_ALL_BOOKS = "/books" 
     static SEARCH_MOVIE = "/search/name" 
+    static GET_BY_CATEGORY = "/books"
 
     static INSERT_BOOK = "/insertBook"
     static DELETE_BOOK = "/deleteBook/:isbn"

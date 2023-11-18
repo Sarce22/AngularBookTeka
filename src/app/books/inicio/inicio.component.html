@@ -35,16 +35,38 @@
           
   </div><br><br>
   
-  <h1>Libros Disponibles</h1><br>
-  <!--Row 1 comentar-->
-  <div class="row">
-    <div class="col-lg-2 col-sm-6 col-md-6 d-flex align-items-stretch justify-content-center"
-      *ngFor="let book of books">
-      <div class="card card-1 shadow">
-        <a (click)="verLibro(book)" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-decoration-none">
-          <img src="{{book.urlImage}}" class="custom-img" alt="{{book.name}}">
-          <p style="color: black; font-weight: bold;">{{book.category}}</p>
-        </a>
+  <div>
+    <h1>Libros Disponibles</h1>
+  
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <select class="form-select" [(ngModel)]="selectedCategory">
+          <option value="">Todos los libros</option>
+          <option value="Accion">Acción</option>
+          <option value="Poesia">Poesía</option>
+          <option value="Romance">Romance</option>
+          <option value="Paranormal">Paranormal</option>
+          <option value="CienciaFiccion">Ciencia Ficción</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary" (click)="filterBooksByCategory()">Filtrar por Categoría</button>
+      </div>
+    </div><br>
+
+    <div *ngIf="noBooksMessage" class="alert alert-warning mt-3">{{ noBooksMessage }}</div>
+  
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-3" *ngFor="let book of books">
+        <div class="card custom-card shadow">
+          <a (click)="verLibro(book)" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-decoration-none">
+            <img src="{{book.urlImage}}" class="card-img-top custom-img" alt="{{book.name}}">
+            <div class="card-body">
+              <p class="card-text" style="color: black; font-weight: bold;">{{book.category}}</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
+  

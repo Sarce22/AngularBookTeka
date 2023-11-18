@@ -15,29 +15,57 @@ export class InicioComponent implements OnInit{
   imagen2 = 'https://i.pinimg.com/564x/9a/62/59/9a62594579e4557a6646fe152c0eb7da.jpg' 
   imagen3 = 'https://i.pinimg.com/564x/01/78/2e/01782e1e294fe2dd1f64753d6725bde7.jpg'
   books!: Book[]
+  selectedCategory: string = '';
+  noBooksMessage: string = '';
 
   constructor(private booksService: BooksService){}
 
   ngOnInit(): void {
-    this.getNowPlaying()
+    this.getBooks()
   }
 
-  getNowPlaying() {
-    this.booksService.getNowPlaying().subscribe((res) => {
-      console.log(res);
-      
-      if (res) {
-        this.books = res
-        console.log(this.books);
-
-      } else {
-        SwalUtils.customMessageError("Error", "No se encontratron libros")
-      }
-    }, (error) => {
-      console.log(error);
-      SwalUtils.customMessageError("Error", "Error al consultar los datos")
-    })
+  getBooks() {
+    if (this.selectedCategory) {
+      this.booksService.getBooksByCategory(this.selectedCategory).subscribe(
+        (res) => {
+          if (res) {
+            this.books = res;
+            this.noBooksMessage = this.books.length === 0 ? 'No hay libros de esta categoría.' : '';
+          } else {
+            this.books = [];
+            this.noBooksMessage = 'No se encontraron libros para esta categoría';
+          }
+        },
+        (error) => {
+          console.error(error);
+          SwalUtils.customMessageError("Error", "Error al consultar los datos por categoría");
+        }
+      );
+    } else {
+      this.booksService.getNowPlaying().subscribe(
+        (res) => {
+          if (res) {
+            this.books = res;
+          } else {
+            this.books = [];
+            SwalUtils.customMessageError("Error", "No se encontraron libros");
+          }
+          this.noBooksMessage = '';
+        },
+        (error) => {
+          console.error(error);
+          SwalUtils.customMessageError("Error", "Error al consultar los datos");
+        }
+      );
+    }
   }
+
+
+  filterBooksByCategory() {
+    this.getBooks(); 
+  }
+
+ 
 
 
   verLibro(book: Book) {
