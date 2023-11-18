@@ -30,6 +30,21 @@ export class BooksService {
       );
   }
   
+  getBooksByCategory(category: string): Observable<any> {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    const url = `${this.urlBase}${Contants.GET_BY_CATEGORY}?category=${category}`;
+    return this.http.get<any>(url, options)
+      .pipe(
+        catchError(error => {
+          console.error('Error en la solicitud por categoría:', error);
+          return throwError(error);
+        })
+      );
+  }
   
 }
 

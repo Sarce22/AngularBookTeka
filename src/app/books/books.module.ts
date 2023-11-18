@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BooksRoutingModule } from './books-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { CategoryBookComponent } from './category-book/category-book.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +15,8 @@ import { CategoryBookComponent } from './category-book/category-book.component';
   ],
   imports: [
     CommonModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    FormsModule
   ]
 })
 export class BooksModule { 
