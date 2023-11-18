@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-
 import { AdminComponent } from './admin/admin.component';
 import { RegistrarUsersComponent } from './registrar-users/registrar-users.component';
 import { ListadoUsersComponent } from './listado-users/listado-users.component';
@@ -11,8 +10,9 @@ import { RegistrarBooksComponent } from './registrar-books/registrar-books.compo
 import { ListadoBooksComponent } from './listado-books/listado-books.component';
 import { authGuard } from './guards/auth.guard';
 import { Utils } from './utils/utils';
-import { RestrictedComponent } from 'src/restricted/restricted.component';
+
 import { deactivateGuard } from './auth/deactivate.guard';
+import { RestrictedComponent } from 'src/restricted/restricted.component';
 
 
 const routes: Routes = [
@@ -65,10 +65,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'restricted', component:RestrictedComponent
+    path: 'restricted', component: RestrictedComponent
   },
   {
-    path: 'logout', redirectTo:'/login', pathMatch:'full'
+    path: 'logout', redirectTo: '/login', pathMatch: 'full'
   }
 ];
 
