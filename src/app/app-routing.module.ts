@@ -10,7 +10,6 @@ import { RegistrarBooksComponent } from './registrar-books/registrar-books.compo
 import { ListadoBooksComponent } from './listado-books/listado-books.component';
 import { authGuard } from './guards/auth.guard';
 import { Utils } from './utils/utils';
-
 import { deactivateGuard } from './auth/deactivate.guard';
 import { RestrictedComponent } from 'src/app/restricted/restricted.component';
 
@@ -48,6 +47,7 @@ const routes: Routes = [
       },
       {
         path: 'registrarUser',component:RegistrarUsersComponent,
+        canDeactivate:[deactivateGuard],
         canMatch: [()=> Utils.isRole('admin')]
       },
       {
@@ -56,6 +56,7 @@ const routes: Routes = [
       },
       {
         path: 'registrarBooks',component:RegistrarBooksComponent,
+        canDeactivate:[deactivateGuard],
         canMatch: [()=> Utils.isRole('admin')]
       },
       {

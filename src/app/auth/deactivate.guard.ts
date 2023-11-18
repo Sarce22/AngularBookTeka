@@ -2,12 +2,7 @@ import { CanDeactivateFn } from '@angular/router';
 import Swal from 'sweetalert2';
 import { FormGroup } from '@angular/forms';
 
-export const deactivateGuard: CanDeactivateFn<unknown> = async (
-  component: any,
-  currentRoute,
-  currentState,
-  nextState
-) => {
+export const deactivateGuard: CanDeactivateFn<unknown> = async (component: any,currentRoute,currentState,nextState) => {
   let next = true;
 
   if (component && component.iniciarFormulario) {
