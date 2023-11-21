@@ -136,3 +136,15 @@ label input:focus {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.submit-btn:hover {
+    opacity: 0.75;
+  }
+
+  .submit-btn {
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    transform: scale(1.1);
+  }
