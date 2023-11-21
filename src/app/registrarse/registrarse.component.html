@@ -1,7 +1,11 @@
 <div class="container-fluid" id="fondo">
+  <div class="text-left mt-3 ml-3">
+    <button type="button" class="submit-btnDos" routerLink="/login">Volver al login</button>
+  </div>
   <div class="container"><br>
     <form [formGroup]="registrarseFormulario" (ngSubmit)="onRegister()">
       <label for="">
+        
         <div class="row">
           <div class="text-center">
             <h1>Registrate en BookTeka</h1>
@@ -80,6 +84,7 @@
           <div>
             <button type="submit" class="submit-btn mx-5">Registrarse</button>
           </div>
+          
 
         </div>
 
