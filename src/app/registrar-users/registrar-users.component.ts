@@ -64,7 +64,7 @@ export class RegistrarUsersComponent {
       console.log('Verifica tu información antes de registrar.');
       Swal.fire({
         icon: 'error',
-        title: 'Oops... Verifica tu información',
+        title: 'Oops... Completa todos los campos',
         text: 'Something went wrong!',
         footer: '<a href="">Ayuda?</a>'
       });
