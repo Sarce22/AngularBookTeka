@@ -10,8 +10,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     InicioComponent,
-    CategoryBookComponent,
-   
+    CategoryBookComponent
   ],
   imports: [
     CommonModule,

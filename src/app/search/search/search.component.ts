@@ -59,7 +59,9 @@ export class SearchComponent {
           <div class="mb-3">
             <h3 style="color: #3498db; font-family: 'Arial', sans-serif;">${book.name}</h3>
           </div>
-
+          <div class="mb-3">
+                  <h4 style="color: #3498db; font-family: 'Arial', sans-serif;">${book.author}</h4>
+                </div>
           <div class="mb-3">
             <p id="description" style="font-size: 16px; color: #555;">${book.description}</p>
           </div>

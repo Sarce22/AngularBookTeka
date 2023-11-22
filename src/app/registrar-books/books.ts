@@ -5,4 +5,5 @@ export class Book {
     description: string = ""
     urlImage: string = ""
     category: string = ""
+    author: string= ''
 }

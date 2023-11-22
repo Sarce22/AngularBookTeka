@@ -97,6 +97,11 @@ export class ListadoBooksComponent implements OnInit{
               </div>
 
               <div class="mb-3">
+                <label for="author" class="form-label" style="font-weight: bold;">Autor:</label>
+                <input id="author" class="form-control" value="${book.author}" required>
+              </div>
+
+              <div class="mb-3">
                 <label for="price" class="form-label" style="font-weight: bold;">Precio:</label>
                 <input id="price" class="form-control" value="${book.price}" required>
               </div>
@@ -107,11 +112,11 @@ export class ListadoBooksComponent implements OnInit{
                 <label for="category" style="font-weight: bold;">Categoría:</label>
                 <select class="form-control" id="category" formControlName="category">
                   <option value="${book.category}">${book.category}</option>
-                  <option value="paranormal">Paranormal</option>
-                  <option value="cienciaficcion">Ciencia Ficción</option>
-                  <option value="poesia">Poesía</option>
-                  <option value="romance">Romance</option>
-                  <option value="accion">Acción</option>
+                  <option value="Paranormal">Paranormal</option>
+                  <option value="Ciencia Ficción">Ciencia Ficción</option>
+                  <option value="Poesía">Poesía</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Acción">Acción</option>
                 </select>
               </div><br>
 
@@ -141,6 +146,7 @@ export class ListadoBooksComponent implements OnInit{
       if (result.isConfirmed) {
         const name = (<HTMLInputElement>document.getElementById('name')).value;
         const isbn = (<HTMLInputElement>document.getElementById('isbn')).value;
+        const author = (<HTMLInputElement>document.getElementById('author')).value;
         const price = (<HTMLInputElement>document.getElementById('price')).value;
        
         const category = (<HTMLInputElement>document.getElementById('category')).value;
@@ -151,7 +157,7 @@ export class ListadoBooksComponent implements OnInit{
   
         book.name = name;
         book.isbn = isbn;
-        
+        book.author = author
         book.price = parseInt(price);
         book.urlImage = urlImage;
         book.category = category;

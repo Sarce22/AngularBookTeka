@@ -32,8 +32,8 @@ export class LoginComponent {
 
   iniciarFormulario(): FormGroup {
     return this.fb.group({
-      email: ['sebas@aa.com', [Validators.required]],
-      password: ['12345', [Validators.required,Validators.minLength(5)]]
+      email: ['sebas@admin.com', [Validators.required]],
+      password: ['admin', [Validators.required,Validators.minLength(5)]]
     })
   }
 
@@ -76,7 +76,7 @@ export class LoginComponent {
   }
 
   extractData() {
-    this.login.email = this.loginForm.get("email")?.value
+    this.login.email = this.loginForm.value.email
     this.login.password = this.loginForm.value.password
   }
 }
