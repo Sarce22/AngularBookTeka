@@ -18,7 +18,7 @@
             </label>
             <label for="password">
                 <label>Password</label>
-                <input type="password" id="password" name="password" placeholder="6+ caracteres"
+                <input type="password" id="password" name="password" placeholder="5+ caracteres"
                     formControlName="password" class="form-control" />
                 <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
                     class="alert alert-danger mt-2" role="alert">
@@ -26,7 +26,7 @@
                 </div>
                 <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']"
                     class="alert alert-danger mt-2" role="alert">
-                    Minimo 6 caracteres para la contraseña
+                    Minimo 5 caracteres para la contraseña
                 </div>
             </label>
 
