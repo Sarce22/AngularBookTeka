@@ -4,7 +4,8 @@
       <a (click)="verLibro(book)" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-decoration-none">
         <img src="{{book.urlImage}}" class="card-img-top custom-img" alt="{{book.name}}">
         <div class="card-body">
-          <p class="card-text" style="color: black; font-weight: bold;">{{book.category}}</p>
+          <p class="card-text" style="color: black; font-weight: bold;">{{book.name}}</p>
+          <p class="card-text" style="color: rgb(119, 37, 37); font-weight: bold;">{{book.category}}</p>
         </div>
       </a>
     </div>

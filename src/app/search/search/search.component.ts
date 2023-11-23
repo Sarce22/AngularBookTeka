@@ -70,9 +70,7 @@ export class SearchComponent {
             <p id="price" style="font-size: 18px; color: #27ae60; font-weight: bold;">${book.price}</p>
           </div>
 
-          <div class="mb-3">
-            <button class="btn btn-primary" ">Comprar</button>
-          </div>
+          
         </div>
       </div>
     </div>
